@@ -12,7 +12,7 @@ export class AuthDto {
   @IsString()
   @MinLength(8)
   @MaxLength(20)
-  @Matches(/^[a-zA-z0-9]*$/, {
+  @Matches(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/, {
     message: '비밀번호가 영어 또는 숫자 조합이 아닙니다.',
   })
   password: string;
